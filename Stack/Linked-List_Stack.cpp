@@ -18,18 +18,18 @@ void push(int data)
     node->next = top;
     top = node;
 
-    cout << "³ëµå »ðÀÔ: " << "[ " << node->data << " ]" << endl;
+    cout << "ë…¸ë“œ ì‚½ìž…: " << "[ " << node->data << " ]" << endl;
 }
 
 void Top()
 {
     if (top != NULL)
     {
-        cout << "¸¶Áö¸· ³ëµå: " << "[ " << top->data << " ]" << endl;
+        cout << "ë§ˆì§€ë§‰ ë…¸ë“œ: " << "[ " << top->data << " ]" << endl;
     }
     else
     {
-        cout << "¸¶Áö¸· ³ëµå°¡ ºñ¾ú½À´Ï´Ù." << endl;
+        cout << "ë§ˆì§€ë§‰ ë…¸ë“œê°€ ë¹„ì—ˆìŠµë‹ˆë‹¤." << endl;
     }
     cout << endl;
 }
@@ -38,11 +38,11 @@ void pop()
 {
     if (top == NULL)
     {
-        cout << "½ºÅÃÀÌ ¾ð´õÇÃ·Î¿ìÀÔ´Ï´Ù." << endl;
+        cout << "ìŠ¤íƒì´ ì–¸ë”í”Œë¡œìš°ìž…ë‹ˆë‹¤." << endl;
     }
     else
     {
-        cout << "³ëµå »èÁ¦: " << "[ " << top->data << " ]" << endl;
+        cout << "ë…¸ë“œ ì‚­ì œ: " << "[ " << top->data << " ]" << endl;
         top = top->next;
     }
 }
@@ -52,12 +52,12 @@ void display()
     Node* ptr;
     if (top == NULL)
     {
-        cout << "½ºÅÃÀÌ ºñ¾îÀÖ½À´Ï´Ù.";
+        cout << "ìŠ¤íƒì´ ë¹„ì–´ìžˆìŠµë‹ˆë‹¤.";
     }
     else
     {
         ptr = top;
-        cout << "\n½ºÅÃ: ";
+        cout << "\nìŠ¤íƒ: ";
         while (ptr != NULL)
         {
             cout << "[ " << ptr->data << " ]" << " ";
