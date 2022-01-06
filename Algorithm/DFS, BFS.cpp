@@ -30,29 +30,29 @@ int main()
 
 void Create_Array(int n)
 {
-	//¹«¹æÇâ ±×·¡ÇÁ¸¦ À§ÇÑ 2Â÷¿ø ¹è¿­ ÇÒ´ç
+	//ë¬´ë°©í–¥ ê·¸ë˜í”„ë¥¼ ìœ„í•œ 2ì°¨ì› ë°°ì—´ í• ë‹¹
 	int** array = new int* [n];
 	for (int i = 0; i < n; i++)
 	{
 		array[i] = new int[n];
-		memset(array[i], 0, sizeof(int) * n);	//¹è¿­À» 0À¸·Î ÃÊ±âÈ­
+		memset(array[i], 0, sizeof(int) * n);	//ë°°ì—´ì„ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 	}
 
 	if (n == 5)
 	{
-		cout << "\n¹«¹æÇâ ±×·¡ÇÁ·Î ³Ñ¾î°¡·Á¸é Enter¸¦ ´©¸£½Ã¿À.";
+		cout << "\në¬´ë°©í–¥ ê·¸ë˜í”„ë¡œ ë„˜ì–´ê°€ë ¤ë©´ Enterë¥¼ ëˆ„ë¥´ì‹œì˜¤.";
 		getchar();
 		Undirected_Graph_Matrix(array, n);
 	}
 	else if (n == 6)
 	{
-		cout << "\n¹æÇâ ±×·¡ÇÁ·Î ³Ñ¾î°¡·Á¸é Enter¸¦ ´©¸£½Ã¿À.";
+		cout << "\në°©í–¥ ê·¸ë˜í”„ë¡œ ë„˜ì–´ê°€ë ¤ë©´ Enterë¥¼ ëˆ„ë¥´ì‹œì˜¤.";
 		getchar();
 		Directed_Graph_Matrix(array, n);
 	}
 
 	for (int i = 0; i < n; i++)
-	{	//2Â÷¿ø ¹è¿­ ¸Ş¸ğ¸® ÇØÁ¦{
+	{	//2ì°¨ì› ë°°ì—´ ë©”ëª¨ë¦¬ í•´ì œ{
 		delete[] array[i];
 	}
 	delete[] array;
@@ -63,10 +63,10 @@ void Search(int* array[], int n)
 	bool* visited = new bool[n];
 	memset(visited, false, sizeof(visited));
 
-	int start = 0;	//½ÃÀÛ Á¤Á¡
-	int now = start;	//ÇöÀç Á¤Á¡
+	int start = 0;	//ì‹œì‘ ì •ì 
+	int now = start;	//í˜„ì¬ ì •ì 
 	Depth_First_Search(array, visited, now, n);
-	memset(visited, false, sizeof(visited));	// bool ¹è¿­ Àç»ç¿ëÀ» À§ÇØ ÃÊ±âÈ­
+	memset(visited, false, sizeof(visited));	// bool ë°°ì—´ ì¬ì‚¬ìš©ì„ ìœ„í•´ ì´ˆê¸°í™”
 	cout << endl;
 	Breathed_First_Search(array, visited, now, n);
 }
@@ -96,15 +96,15 @@ void Breathed_First_Search(int* array[], bool visited[], int now, int n)
 	que.push(now);
 
 	while (1) {
-		now = que.front();	//°¡Àå ¾ÕÀÇ ¿ø¼Ò¸¦ ÇöÀç À§Ä¡·Î ¿Å±â°í Å¥¿¡¼­ »èÁ¦ 
+		now = que.front();	//ê°€ì¥ ì•ì˜ ì›ì†Œë¥¼ í˜„ì¬ ìœ„ì¹˜ë¡œ ì˜®ê¸°ê³  íì—ì„œ ì‚­ì œ 
 		que.pop();
 		for (i = 1; i <= n; i++)
 		{
-			if (array[now][i] == 1 && visited[i] == 0)	//°£¼±ÀÌ ÀÖ°í Á¤Á¡¿¡ ¹æ¹®À» ¾ÈÇßÀ¸¸é
+			if (array[now][i] == 1 && visited[i] == 0)	//ê°„ì„ ì´ ìˆê³  ì •ì ì— ë°©ë¬¸ì„ ì•ˆí–ˆìœ¼ë©´
 			{
 				visited[i] = 1;
 				cout << i << " ";
-				que.push(i);	//°£¼±À¸·Î ³Ñ¾î°£ °÷ÀÇ Á¤Á¡À» queue¿¡ »ğÀÔ
+				que.push(i);	//ê°„ì„ ìœ¼ë¡œ ë„˜ì–´ê°„ ê³³ì˜ ì •ì ì„ queueì— ì‚½ì…
 			}
 		}
 		if (que.empty())
@@ -116,7 +116,7 @@ void Breathed_First_Search(int* array[], bool visited[], int now, int n)
 
 void Add_Edge_To_Matrix(int* array[], int x, int y)	//array X num, array Y num
 {
-	array[x][y] = 1;	//Á¤Á¡ xÁÂÇ¥, yÁÂÇ¥
+	array[x][y] = 1;	//ì •ì  xì¢Œí‘œ, yì¢Œí‘œ
 }
 
 void Display_Matrix(int* array[], int n)
@@ -124,11 +124,11 @@ void Display_Matrix(int* array[], int n)
 	int i, j;
 	for (i = 0; i < n; i++)
 	{
-		if (n == 6)	//¹æÇâ ±×·¡ÇÁ°¡ ¹İ´ë·Î ÂïÈ÷±â ¶§¹®¿¡
+		if (n == 6)	//ë°©í–¥ ê·¸ë˜í”„ê°€ ë°˜ëŒ€ë¡œ ì°íˆê¸° ë•Œë¬¸ì—
 		{
 			for (j = 0; j < n; j++)
 			{
-				cout << array[j][i] << " ";	//¹İ´ë·Î Ãâ·Â
+				cout << array[j][i] << " ";	//ë°˜ëŒ€ë¡œ ì¶œë ¥
 			}
 			cout << endl;
 		}
@@ -156,8 +156,8 @@ void Get_Adjacent_Vertex(int* array[], int n)
 				sum++;
 			}
 		}
-		cout << i << "¹ø Á¤Á¡ÀÌ ÀÎÁ¢ÇÑ Á¤Á¡ÀÇ °³¼ö: " << sum << endl;
-		sum = 0;	//°³¼ö ÃÊ±âÈ­
+		cout << i << "ë²ˆ ì •ì ì´ ì¸ì ‘í•œ ì •ì ì˜ ê°œìˆ˜: " << sum << endl;
+		sum = 0;	//ê°œìˆ˜ ì´ˆê¸°í™”
 	}
 }
 
