@@ -6,7 +6,7 @@ void display(vector<int> &stack)
 {
 	for (vector<int>::size_type i = 0; i < stack.size(); i++)
 	{
-		cout << "½ºÅÃÀÇ " << i + 1 << "¹ø ¿ä¼Ò: " << stack[i] << endl;
+		cout << "ìŠ¤íƒì˜ " << i + 1 << "ë²ˆ ìš”ì†Œ: " << stack[i] << endl;
 	}
 }
 
@@ -14,15 +14,15 @@ int main()
 {
 	vector<int> stack;
 
-	stack.push_back(12);		// ¿ä¼Ò »ðÀÔ
+	stack.push_back(12);		// ìš”ì†Œ ì‚½ìž…
 	stack.push_back(56);
 	stack.push_back(90);
 
 	cout << "\n";
 
 	display(stack);
-	cout << "¸¶Áö¸· ¿ä¼Ò: " << stack.back() << endl;
+	cout << "ë§ˆì§€ë§‰ ìš”ì†Œ: " << stack.back() << endl;
 
-	stack.pop_back();			// ¸¶Áö¸· ¿ä¼Ò »èÁ¦
-	cout << "¸¶Áö¸· ¿ä¼Ò: " << stack.back() << endl;
+	stack.pop_back();			// ë§ˆì§€ë§‰ ìš”ì†Œ ì‚­ì œ
+	cout << "ë§ˆì§€ë§‰ ìš”ì†Œ: " << stack.back() << endl;
 }
